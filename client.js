@@ -12,8 +12,14 @@ const connect = function () {
 
   // display message from server when data event occurs
   conn.on('data', (message) =>{
-    console.log('Serve says: ', message);
-  })
+    console.log('Server says: ', message);
+  });
+
+  conn.on('connect', () =>{
+    console.log('Successfully connected to game server');
+  });
+
+  conn.write('Name: Moo');
 
   return conn;
 };
