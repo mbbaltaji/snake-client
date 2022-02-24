@@ -1,10 +1,10 @@
 const net = require('net');
-const { IP, port } = require('./constants');
+const { IP, PORT } = require('./constants');
 
 const connect = function () {
   const conn = net.createConnection({
     IP,
-    port
+    port: PORT
   });
 
   conn.setEncoding("utf8");
