@@ -1,6 +1,6 @@
 /* This module is responsible for user input from stdin (keyboard)
    it two functions: setupInput that takes in raw input from stdin 
-   and handleUserInput that handles the raw input */ 
+   and handleUserInput that handles the raw input    */ 
 
 let connection; //to store conn object from client
 
@@ -18,28 +18,42 @@ const setupInput = function(conn) {
   return stdin;
 };
 
+
+
+const cannedMessage = {
+  '1': 'Say: Let the games begin',
+  2: 'Say: Better luck next time',
+  3: 'Say: GG',
+  4: 'Say: That was fun'
+}
+
+
 // Callback function that terminates game when ctrl+c is pressed
 const handleUserInput = function(input) {
   
   if (input === '\u0003')
     process.exit();
   
-  // Handles wsad input form stdin
+  // Handles WSAD input form stdin
   switch (input) {
-  case '\u0077':
+  case 'w':
     connection.write('Move: up');
     break;
-  case '\u0073':
+  case 's':
     connection.write('Move: down');
     break;
-  case '\u0061':
+  case 'a':
     connection.write('Move: left');
     break;
-  case '\u0064':
+  case 'd':
     connection.write('Move: right');
     break;
   default:
     break;
+  }
+
+  if (cannedMessage[input]) {
+    connection.write(cannedMessage[input]);
   }
 };
 
