@@ -1,6 +1,9 @@
 const net = require('net');
 const { IP, PORT } = require('./constants');
 
+/**
+ * @returns {object} conn object that represents the connection to the server
+ */
 const connect = function () {
   const conn = net.createConnection({
     IP,
