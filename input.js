@@ -1,6 +1,6 @@
 
 const { KEY_STROKES, CTRL_C} = require('./constants');
-let connection; 
+let connection;
 
 
 
@@ -25,7 +25,7 @@ const setupInput = function(conn) {
  */
 const handleUserInput = function(input) {
 
-  if(input === CTRL_C)
+  if (input === CTRL_C)
     process.exit();
 
   if (KEY_STROKES[input]) {
