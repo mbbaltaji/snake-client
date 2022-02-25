@@ -1,10 +1,8 @@
-
-
 const IP = 'localhost';
 const PORT = 50541;
 const CTRL_C = '\u0003';
 
-const  KEY_STROKES= {
+const  KEY_STROKES = {
   'w': 'Move: up',
   'a': 'Move: left',
   's': 'Move: down',
@@ -13,10 +11,10 @@ const  KEY_STROKES= {
   2: 'Say: Better luck next time',
   3: 'Say: GG',
   4: 'Say: That was fun'
-}
+};
 
 module.exports = {
-  IP, 
+  IP,
   PORT,
   CTRL_C,
   KEY_STROKES
